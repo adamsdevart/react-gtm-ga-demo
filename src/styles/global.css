@@ -15,27 +15,30 @@
   --color-overlay: rgba(0, 0, 0, 0.5);
 
   /* Typography */
-  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-size-small: 14px;
-  --font-size-base: 16px;
-  --font-size-large: 18px;
-  --font-size-xl: 20px;
-  --font-size-xxl: 24px;
-  --font-size-xxxl: 28px;
-  --font-size-title: 32px;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-xxl: 1.5rem;
+  --font-size-xxxl: 1.75rem;
+  --font-size-title: 2rem;
 
   /* Spacing */
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 12px;
-  --spacing-lg: 16px;
-  --spacing-xl: 20px;
-  --spacing-xxl: 24px;
-  --spacing-xxxl: 32px;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 0.75rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1.25rem;
+  --spacing-xxl: 1.5rem;
+  --spacing-xxxl: 2rem;
 
   /* Border radius */
-  --border-radius-sm: 4px;
-  --border-radius-md: 8px;
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --border-radius-xl: 1rem;
 
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -60,6 +63,15 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-image: linear-gradient(
+    to bottom,
+    hsla(221, 100%, 93%, 0),
+    hsl(221, 100%, 93%)
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* Typography */
