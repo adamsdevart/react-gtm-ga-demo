@@ -43,3 +43,132 @@
     letter-spacing: 0.05em;
   }
 }
+
+
+
+/* Dialog Styles */
+.purchase-dialog {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-xxl);
+  max-width: 400px;
+  width: 90%;
+  border: none;
+  box-shadow: var(--shadow-lg);
+  margin: auto;
+}
+
+/* Dialog backdrop styling */
+.purchase-dialog::backdrop {
+  background-color: var(--color-overlay);
+  backdrop-filter: blur(2px);
+}
+
+.dialog__close-button {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  background: none;
+  border: none;
+  font-size: var(--font-size-xxl);
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color var(--transition-fast);
+}
+
+.dialog__close-button:hover {
+  background-color: var(--color-background);
+}
+
+.dialog__content {
+  text-align: center;
+  position: relative;
+}
+
+.dialog__image {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.dialog__title {
+  margin: 0 0 var(--spacing-sm) 0;
+  font-size: var(--font-size-xxl);
+  color: var(--color-text-primary);
+}
+
+.dialog__description {
+  margin: 0 0 var(--spacing-lg) 0;
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.dialog__price {
+  margin-bottom: var(--spacing-xxl);
+  font-size: var(--font-size-xxxl);
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.dialog__actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+}
+
+.dialog__button {
+  padding: var(--spacing-md) var(--spacing-xxl);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  border-radius: var(--border-radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.dialog__button--secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.dialog__button--secondary:hover {
+  background-color: #5a6268;
+}
+
+.dialog__button--primary {
+  background-color: var(--color-success);
+  color: var(--color-white);
+}
+
+.dialog__button--primary:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-card {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .product-grid {
+    gap: var(--spacing-md);
+  }
+  
+  .purchase-dialog {
+    margin: var(--spacing-lg);
+    width: calc(100% - 2 * var(--spacing-lg));
+  }
+  
+  .dialog__actions {
+    flex-direction: column;
+  }
+}

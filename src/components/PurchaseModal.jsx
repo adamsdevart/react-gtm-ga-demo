@@ -8,7 +8,6 @@ import { useEffect, useRef } from "react";
  * @param {Function} props.onClose - Callback to close modal
  * @param {Object} props.product - Product data to display
  */
-
 const PurchaseModal = ({ isOpen, onClose, product }) => {
   const dialogRef = useRef(null);
 
@@ -37,6 +36,13 @@ const PurchaseModal = ({ isOpen, onClose, product }) => {
     }
   };
 
+  if (!product) return null;
+
+  const handleConfirmPurchase = () => {
+    alert(`Purchase confirmed for ${product.name}!`);
+    onClose();
+  };
+
   return (
     <dialog
       ref={dialogRef}
@@ -46,9 +52,45 @@ const PurchaseModal = ({ isOpen, onClose, product }) => {
       aria-labelledby="dialog-title"
       aria-describedby="dialog-description"
     >
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Moles tiae iure,
-      aspernatur recusandae omnis ratione odit sint cumque tempore vel, fuga
-      tempora nisi atque sequi cum velit sapiente enim quae harum.Í¸¸
+      <div className="dialog__content">
+        <button
+          onClick={onClose}
+          className="dialog__close-button"
+          aria-label="Close modal"
+          type="button"
+        >
+          ×
+        </button>
+
+        <img src={product.image} alt={product.name} className="dialog__image" />
+
+        <h2 id="dialog-title" className="dialog__title">
+          {product.name}
+        </h2>
+
+        <p id="dialog-description" className="dialog__description">
+          {product.description}
+        </p>
+
+        <div className="dialog__price">${product.price.toFixed(2)}</div>
+
+        <div className="dialog__actions">
+          <button
+            onClick={onClose}
+            className="dialog__button dialog__button--secondary"
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={handleConfirmPurchase}
+            className="dialog__button dialog__button--primary"
+            type="button"
+          >
+            Confirm Purchase
+          </button>
+        </div>
+      </div>
     </dialog>
   );
 };
